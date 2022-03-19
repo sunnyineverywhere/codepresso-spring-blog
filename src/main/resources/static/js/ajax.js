@@ -36,4 +36,26 @@ $(function(){
     $(".comment-edit-cancel-button").click(function(){
         $(this).closest(".comment_text").find(".comment-edit").hide();
     });
+
+    $("#create_button").click(function(){
+        var title = $("#post-title").val();
+        var username = $("#post-username").val();
+        var content = $("#post-content").val();
+
+        $.ajax({
+            method: "POST",
+            url: "/post",
+            data: JSON.stringify({
+                "title": title,
+                "username": username,
+                "content": content
+            }),
+            contentType: "application/json"
+        })
+
+        .done(function(response) {
+            console.log("Post creation success");
+            window.location.href = "/";
+        })
+    });
 });
