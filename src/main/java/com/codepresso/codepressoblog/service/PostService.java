@@ -21,4 +21,10 @@ public class PostService {
     public List<Post> getPostByPage(Integer page, Integer size){
         return postMapper.findByPage(size, (page-1) * size);
     }
+
+
+    //  컨트롤러와 매퍼의 중계 역할
+    public Post getPostById(Integer id){
+        return postMapper.findOne(id);
+    }
 }

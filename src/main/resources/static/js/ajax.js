@@ -12,7 +12,7 @@ $(function(){
         .done(function(response){
             for(var post of response){
                 $("#more-posts").append("<div class = \"post-preview\">" +
-                    "<a href=\"#\">" +
+                    "<a href=\"/post/" + post.id + "\">" +
                     "<h2 class =\"post-title\">" +
                     post.title +
                     "</h2>\n" +

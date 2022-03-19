@@ -4,6 +4,7 @@ import com.codepresso.codepressoblog.controller.dto.PostResponseDto;
 import com.codepresso.codepressoblog.service.PostService;
 import com.codepresso.codepressoblog.vo.Post;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ public class PostController {
         this.postService = postService;
     }
 
-    @GetMapping("/post")
+    @GetMapping(value = "/post")
     public List<PostResponseDto> getPostList(@RequestParam Integer page){
         List<Post> postList = postService.getPostByPage(page, 3);
 
