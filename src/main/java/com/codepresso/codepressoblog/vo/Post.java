@@ -49,6 +49,13 @@ public class Post {
         this.createdAT = createdAT;
     }
 
+    public Post(Integer id, String title, String content, String username) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.username = username;
+    }
+
     public Post(Integer id, String title, String content, String username, Date createdAT) {
         this.id = id;
         this.title = title;
