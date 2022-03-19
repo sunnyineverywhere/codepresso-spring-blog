@@ -19,6 +19,6 @@ public class PostService {
     }
 
     public List<Post> getPostByPage(Integer page, Integer size){
-        return postMapper.findByPage(size, (page-1), size);
+        return postMapper.findByPage(size, (page-1) * size);
     }
 }
